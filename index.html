@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link   rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js"  type="text/javascript"></script>
+	</head>
+
+	<body onload="Vaciar_Post();Cargar_Usuarios();Cargar_Posts();">
+
+		<!-- BARRA NAV -->
+		<nav id="barra_nav">
+			<div id="nav_contenedor">
+				<img src="./img/logo.png" id="logo">
+				<div id="active_user">
+					<p id="current_user">asd</p>
+					<img src="./img/perfil.png" id="perfil">
+				</div>
+			</div>
+		</nav>
+
+		<!-- CONTENEDOR COL IZQUIERDA Y DERECHA -->
+		<section id="main_contenedor">
+			<div id="wrapper">
+
+				<!-- COLUMNA IZQUIERDA -->
+				<div id="col-izquierda">
+
+					<div id="formulariodiv">
+						<!-- FORM -->
+						<form onsubmit="Crear_Post();return false" id="form" class="formulario">
+							<!-- <label id="usuario">Usuario</label> -->
+							<!-- <br> -->
+							<label for="descripcion">Descripción</label>
+							<input id="input_descripcion" type="text" name="descripcion">
+							<br>
+							<br>
+							<label>Imágen</label>
+							<input
+								type="file"
+								id="input_imagen"
+								name="input_imagen"
+								accept="image/png, image/jpeg, image/gif"
+								onchange="Cargar_Imagen()"
+							/>
+							<img id="new_post_image" src="./img/placeholder.jpg">
+							<br>
+							<br>
+							<input id="btne" type="submit" name="submitear" value="Nuevo Post">
+							<input           type="reset"  name="resetea"   value="Vaciar" onclick="Vaciar_Post()">
+						</form>
+					</div>
+
+					<!-- POSTS -->
+					<div id="post_list" class="post_list">
+
+
+					</div>
+
+				</div>
+
+				<!-- COLUMNA DERECHA USUARIOS -->
+				<div class="col-derecha">
+					<h2>Usuarios</h2>
+					<div id="lista_usuario" class="lista_usuario">
+						
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	</body>
+</html>
+
